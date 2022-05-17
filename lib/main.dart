@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:online_library/consttants.dart';
+import 'package:online_library/screens/home_screen.dart';
+import 'package:online_library/widgets/rounded_button.dart';
 
 void main() {
   runApp(const MyApp());
@@ -58,7 +60,21 @@ class WelcomeScreen extends StatelessWidget {
                   ],
               ),),
 
-              
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.6,
+                child: RoundedButton( 
+                  text: "Tap to Start", 
+                  fontSize: 20, 
+                  press: () {
+                    Navigator.push(
+                      context, 
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return HomeScreen();
+                        },
+                        ),
+                        );
+                        })),
                   
           ],
         ),
@@ -66,3 +82,4 @@ class WelcomeScreen extends StatelessWidget {
     );
   }
 }
+
