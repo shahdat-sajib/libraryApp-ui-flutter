@@ -4,6 +4,8 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:online_library/consttants.dart';
 
+import '../widgets/book_rating.dart';
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -81,6 +83,35 @@ class HomeScreen extends StatelessWidget {
                     ),
                       
                   ),
+                  Positioned(
+                    top: 160,
+                    child: Container(
+                      height: 85,
+                      width: 202,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 24),
+                            child: RichText(text: TextSpan(
+                              style: TextStyle(color: kBlackColor),
+                              children: [
+                                TextSpan(text: "Data Structure\n",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                ),
+                                ),
+                                TextSpan(text: "Engr. Kamal Hossen",
+                                style: TextStyle(
+                                  color: kLightBlackColor,
+                                )),
+                              ]
+                            )),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -91,46 +122,3 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
-class BookRating extends StatelessWidget {
-  final double score;
-
-  const BookRating({
-    Key? key, 
-    required this.score,
-
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-    padding:
-        EdgeInsets.symmetric(vertical: 8, horizontal: 6),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(16),
-          boxShadow: [
-            BoxShadow(
-              offset: Offset(3, 7),
-              blurRadius: 20,
-              color: Color(0xFD3D3D3).withOpacity(0.5),
-            ),
-          ],
-        ),
-        child: Column(
-          children: [
-            Icon(
-              Icons.star,
-              color: kIconColor,
-              size: 15,
-            ),
-            SizedBox(height: 5,),
-            Text("$score",
-            style: TextStyle(
-              fontSize: 12,
-              fontWeight: FontWeight.bold,
-            ),)
-          ],
-        ),
-                        );
-  }
-}
