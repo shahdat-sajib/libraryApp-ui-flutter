@@ -43,19 +43,43 @@ class HomeScreen extends StatelessWidget {
               width: 202,
               child: Stack(
                 children: [
-                  Container(
-                    height: 221,
-                    decoration: BoxDecoration(color: Colors.white,
-                    borderRadius: BorderRadius.circular(29),
-                    boxShadow: [
-                      BoxShadow(
-                        offset: Offset(0, 10),
-                        blurRadius: 33,
-                        color: kShadowColor,
-                      )
-                      
-                    ],
+                  Positioned(
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
+                    child: Container(
+                      height: 221,
+                      decoration: BoxDecoration(color: Colors.white,
+                      borderRadius: BorderRadius.circular(29),
+                      boxShadow: [
+                        BoxShadow(
+                          offset: Offset(0, 10),
+                          blurRadius: 33,
+                          color: kShadowColor,
+                        )
+                      ],
+                      ),
                     ),
+                  ),
+                  Image.asset(
+                    "assets/images/book-1.png",
+                    width: 150,
+                  ),
+                  Positioned(
+                    top: 35,
+                    right: 10,
+                    child: Column(
+                      children: [
+                        IconButton(
+                          icon: Icon(
+                            Icons.favorite_border,
+                          ),
+                          onPressed: (){},
+                          ),
+                          BookRating(score: 4.9,),
+                      ],
+                    ),
+                      
                   ),
                 ],
               ),
@@ -64,5 +88,49 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class BookRating extends StatelessWidget {
+  final double score;
+
+  const BookRating({
+    Key? key, 
+    required this.score,
+
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+    padding:
+        EdgeInsets.symmetric(vertical: 8, horizontal: 6),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(16),
+          boxShadow: [
+            BoxShadow(
+              offset: Offset(3, 7),
+              blurRadius: 20,
+              color: Color(0xFD3D3D3).withOpacity(0.5),
+            ),
+          ],
+        ),
+        child: Column(
+          children: [
+            Icon(
+              Icons.star,
+              color: kIconColor,
+              size: 15,
+            ),
+            SizedBox(height: 5,),
+            Text("$score",
+            style: TextStyle(
+              fontSize: 12,
+              fontWeight: FontWeight.bold,
+            ),)
+          ],
+        ),
+                        );
   }
 }
