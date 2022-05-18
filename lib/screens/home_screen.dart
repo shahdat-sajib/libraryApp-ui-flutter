@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:online_library/consttants.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -35,7 +36,30 @@ class HomeScreen extends StatelessWidget {
                   ),),
                 ]
               )),
-            )
+            ),
+            SizedBox(height: 30,),
+            Container(
+              height: 245,
+              width: 202,
+              child: Stack(
+                children: [
+                  Container(
+                    height: 221,
+                    decoration: BoxDecoration(color: Colors.white,
+                    borderRadius: BorderRadius.circular(29),
+                    boxShadow: [
+                      BoxShadow(
+                        offset: Offset(0, 10),
+                        blurRadius: 33,
+                        color: kShadowColor,
+                      )
+                      
+                    ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
