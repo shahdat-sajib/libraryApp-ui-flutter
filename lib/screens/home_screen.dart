@@ -5,6 +5,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:online_library/consttants.dart';
 
 import '../widgets/book_rating.dart';
+import '../widgets/two_side_rounded_button.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -93,7 +94,9 @@ class HomeScreen extends StatelessWidget {
                         children: [
                           Padding(
                             padding: const EdgeInsets.only(left: 24),
-                            child: RichText(text: TextSpan(
+                            child: RichText(
+                              maxLines: 2,
+                              text: TextSpan(
                               style: TextStyle(color: kBlackColor),
                               children: [
                                 TextSpan(text: "Data Structure\n",
@@ -107,7 +110,27 @@ class HomeScreen extends StatelessWidget {
                                 )),
                               ]
                             )),
-                          )
+                          ),
+                          Spacer(), // this is for auto space
+                          Row(
+                            children: [
+                              GestureDetector(
+                                onTap: () {},
+                                child: Container(
+                                  width: 101,
+                                  padding: EdgeInsets.symmetric(vertical: 10),
+                                  alignment: Alignment.center,
+                                  child: Text("Details"),
+                                ),
+                              ),
+                              Expanded(
+                                child: TwoSideRoundedButton(
+                                  text: "Read",
+                                  press: () {},
+                                ),
+                              )
+                            ],
+                          ),
                         ],
                       ),
                     ),
