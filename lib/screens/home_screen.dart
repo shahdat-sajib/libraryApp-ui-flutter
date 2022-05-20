@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:online_library/consttants.dart';
 import 'package:online_library/widgets/book_rating.dart';
@@ -29,7 +31,7 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   SizedBox(height: size.height * .1),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 24),
+                    padding: EdgeInsets.symmetric(horizontal: 24),
                     child: RichText(text: TextSpan(
                       style: Theme.of(context).textTheme.displaySmall,
                       children: [
@@ -67,6 +69,7 @@ class HomeScreen extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 24),
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       RichText(text: TextSpan(
                         style: Theme.of(context).textTheme.displaySmall,
@@ -105,6 +108,50 @@ class HomeScreen extends StatelessWidget {
                               color: Color(0xFFD3D3D3).withOpacity(0.84),
                             ),
                           ]
+                        ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(38.5),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Expanded(
+                                child: Padding(
+                                  padding: const EdgeInsets.only(left: 30, right: 20),
+                                  child: Row(
+                                  children: [
+                                    Expanded(child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.end,
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text("Crushing",
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                        ),
+                                        Text("Aythor Name", 
+                                        style: TextStyle(color: kLightBlackColor,),),
+                                        Align(alignment: Alignment.bottomRight,
+                                        child: Text("Chapter 7 of 10", style: TextStyle(
+                                          fontSize: 10,
+                                          color: kLightBlackColor,
+                                        ),),),
+                                        SizedBox(height: 5,),
+                                      ],
+                                    ),),
+                                    Image.asset("assets/images/book-1.png"),
+                                  ],
+                              ),
+                                ),),
+                              Container(
+                                height: 7,
+                                width: size.width * .6,
+                                decoration: BoxDecoration(
+                                  color: kProgressIndicator,
+                                  borderRadius: BorderRadius.circular(7),
+                                ),
+                              )
+                            ],
+                          ),
                         ),
                       ),
                       SizedBox(height: 40,)
