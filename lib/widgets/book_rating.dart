@@ -13,7 +13,7 @@ class BookRating extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 8, horizontal: 6),
+      padding: EdgeInsets.symmetric(vertical: 8, horizontal: 10),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(16),
@@ -21,7 +21,7 @@ class BookRating extends StatelessWidget {
           BoxShadow(
             offset: Offset(3, 7),
             blurRadius: 20,
-            color: Color(0xFD3D3D3).withOpacity(0.5),
+            color: Color(0xFD3D3D3).withOpacity(0.8),
           ),
         ],
       ),
