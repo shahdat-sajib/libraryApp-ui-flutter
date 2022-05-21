@@ -165,7 +165,16 @@ class DetailsScreen extends StatelessWidget {
                                   color: kLightBlackColor,
                                 ))
                               ]
-                            ))
+                            )),
+                            Row(children: [
+                              BookRating(score: 4.9),
+                              SizedBox(width: 20,),
+                              Expanded(child: RoundedButton(
+                                text: "Read", 
+                                press: () {},
+                                verticalPadding: 10,
+                                ))
+                            ],)
                           ],
                         ),
                       ),
