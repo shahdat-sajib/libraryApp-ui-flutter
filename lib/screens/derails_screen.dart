@@ -86,7 +86,12 @@ class DetailsScreen extends StatelessWidget {
                                   color: kBlackColor,
                                   fontWeight: FontWeight.bold,
                                 )
-                              )
+                              ),
+                              TextSpan(
+                                text: "Life is all about change",
+                                style: TextStyle(color: kLightBlackColor,
+                                ),
+                              ),
                             ]
                           ))
                         ],
