@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:online_library/consttants.dart';
+import 'package:online_library/screens/derails_screen.dart';
 import 'package:online_library/widgets/book_rating.dart';
 import 'package:online_library/widgets/two_side_rounded_button.dart';
 import '../widgets/ReadingListCard.dart';
@@ -53,14 +54,25 @@ class HomeScreen extends StatelessWidget {
                           auth: 'Engr. Kamal Hossain', 
                           rating: 4.9, 
                           title: 'Web Development', 
-                          pressDetails: () {  }, 
+                          pressDetails: () { 
+                            Navigator.push(context, MaterialPageRoute(builder: (context){
+                              return DetailsScreen();
+                            },),);
+                           }, 
                           pressRead: () {  },),
                         ReadingListCard(
                           image: 'assets/images/book-2.png', 
                           auth: 'Jonathon Hoph', 
                           rating: 4.8, 
                           title: 'Hacking Crush Course', 
-                          pressDetails: () {  }, 
+                          pressDetails: () { Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return DetailsScreen();
+                                },
+                              ),
+                            ); }, 
                           pressRead: () {  },),
                           SizedBox(width: 30,),
                       ],
