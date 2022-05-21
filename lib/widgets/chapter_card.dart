@@ -6,15 +6,26 @@ import 'book_rating.dart';
 
 
 class ChapterCard extends StatelessWidget {
+  final String name;
+  final String tag;
+  final int chapterNumber;
+  final Function press;
+
   const ChapterCard({
-    Key? key,
-    required this.size,
+    Key? key, 
+    
+    required this.name, 
+    required this.tag, 
+    required this.chapterNumber, 
+    required this.press, required Size size,
+
   }) : super(key: key);
 
-  final Size size;
+
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Container(
       padding: EdgeInsets.symmetric(vertical: 20, horizontal: 30),
       margin: EdgeInsets.only(bottom: 16),
@@ -34,14 +45,14 @@ class ChapterCard extends StatelessWidget {
           RichText(
               text: TextSpan(children: [
             TextSpan(
-                text: "Chapter 1: Money\n",
+                text: "Chapter $chapterNumber: $name\n",
                 style: TextStyle(
                   fontSize: 16,
                   color: kBlackColor,
                   fontWeight: FontWeight.bold,
                 )),
             TextSpan(
-              text: "Life is all about change",
+              text: tag,
               style: TextStyle(
                 color: kLightBlackColor,
               ),
@@ -49,7 +60,7 @@ class ChapterCard extends StatelessWidget {
           ])),
           Spacer(),
           IconButton(
-            onPressed: () {},
+            onPressed: press(),
             icon: Icon(
               Icons.arrow_forward_ios,
               size: 18,

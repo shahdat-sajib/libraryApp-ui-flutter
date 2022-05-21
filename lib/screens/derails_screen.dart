@@ -63,7 +63,49 @@ class DetailsScreen extends StatelessWidget {
                 Padding(padding: EdgeInsets.only(top: size.height * .4 - 30),
                 child: Column(
                   children: [
-                    ChapterCard(size: size)
+                    ChapterCard(
+                      size: size, 
+                      chapterNumber: 1, 
+                      name: 'Money\n', 
+                      press: () {}, 
+                      tag: 'Life is all about change',
+                      ),
+                    ChapterCard(
+                      size: size, 
+                      chapterNumber: 1, 
+                      name: 'Money\n', 
+                      press: () {}, 
+                      tag: 'Life is all about change',
+                      ),
+                    ChapterCard(
+                      size: size, 
+                      chapterNumber: 1, 
+                      name: 'Money\n', 
+                      press: () {}, 
+                      tag: 'Life is all about change',
+                      ),
+                    ChapterCard(
+                      size: size, 
+                      chapterNumber: 1, 
+                      name: 'Money\n', 
+                      press: () {}, 
+                      tag: 'Life is all about change',
+                      ),
+                    ChapterCard(
+                      size: size, 
+                      chapterNumber: 1, 
+                      name: 'Money\n', 
+                      press: () {}, 
+                      tag: 'Life is all about change',
+                      ),
+                    ChapterCard(
+                      size: size, 
+                      chapterNumber: 1, 
+                      name: 'Money\n', 
+                      press: () {}, 
+                      tag: 'Life is all about change',
+                      ),
+                      SizedBox(height: 10,),
                   ],
                 ),
                 ),
